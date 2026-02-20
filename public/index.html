@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаб1</title>
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+
+  <header>
+    <nav class="menu">
+      <a href="#jokes" class="menu-item">Анекдоты</a>
+      <a href="#film" class="menu-item">Фильм</a>
+      <a href="#matches" class="menu-item">Расписание матчей</a>
+    </nav>
+  </header>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Segoe UI',system-ui,sans-serif;
+      background:#f3f6fb;
+      color:#1f2937;
+    }
+    .menu {
+      background:linear-gradient(135deg,#1e3a8a,#2563eb);
+      padding:14px 20px;
+      display:flex;
+      justify-content:center;
+      gap:28px;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 4px 12px rgba(0,0,0,.1);
+    }
+    .menu-item {
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      font-size:1rem;
+      padding:8px 14px;
+      border-radius:8px;
+      transition:.3s;
+    }
+    .menu-item:hover { background:rgba(255,255,255,.15); }
+    .block { padding:60px 20px; }
+    .jokes-block,
+    .cinema-block,
+    .matches-block {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .block h2 {
+      margin-bottom:30px;
+      font-size:1.8rem;
+      font-weight:700;
+      color:#1e3a8a;
+    }
+    .joke,
+    .match-card {
+      display:flex;
+      gap:20px;
+      max-width:650px;
+      width:100%;
+      align-items:center;
+      background:#fff;
+      padding:18px 22px;
+      border-radius:14px;
+      box-shadow:0 8px 20px rgba(0,0,0,.05);
+      margin-bottom:20px;
+      transition:.3s;
+    }
+    .joke:hover,
+    .match-card:hover {
+      transform:translateY(-3px);
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+    .cinema {
+      display:flex;
+      gap:25px;
+      max-width:650px;
+      width:100%;
+      align-items:flex-start;
+      margin-bottom:30px;
+    }
+    .joke-text,
+    .cinema-text { flex:1; }
+    .joke-img img {
+      width:220px;
+      height:220px;
+      border-radius:10px;
+    }
+    .cinema-img img {
+      width:260px;
+      border-radius:12px;
+    }
+    .match-date {
+      background:#2563eb;
+      color:#fff;
+      padding:8px 14px;
+      border-radius:10px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      min-width:70px;
+    }
+    .match-day { font-weight:700; font-size:1.3rem; }
+    .match-month { font-size:.75rem; opacity:.8; text-transform:uppercase; }
+    .match-info {
+      display:flex;
+      flex-direction:column;
+      font-size:.9rem;
+      color:#6b7280;
+    }
+    .match-teams {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:600;
+      font-size:1rem;
+    }
+    .team {
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .team img { width:26px; height:26px; }
+    .vs { font-weight:700; color:#2563eb; }
+  </style>
+
+  <main class="content">
+
+    <section id="jokes" class="block jokes-block">
+      <h2>Анекдоты</h2>
+
+      <div class="joke">
+        <div class="joke-text">
+          <p>Социализм отличается от капитализма, как Артек и остров Эпштейна.<br>
+          И тот и другой создан ради детей.<br>
+          Но есть нюанс.</p>
+        </div>
+        <div class="joke-img">
+          <img src="images/joke/ржака1.jpg" alt="Анекдот">
+        </div>
+      </div>
+
+      <div class="joke">
+        <div class="joke-text">
+          <p>— Я без шапки хожу практически всегда...<br>
+          — Вот! А если бы ходил в шапке, то помнил бы.</p>
+        </div>
+        <div class="joke-img">
+          <img src="images/joke/ржака2.webp" alt="Анекдот">
+        </div>
+      </div>
+
+      <div class="joke">
+        <div class="joke-text">
+          <p>— Почему дверцу стиральной машинки нельзя открыть сразу после стирки?<br>
+          — Она в это время завязывает колготки вокруг трусов.</p>
+        </div>
+        <div class="joke-img">
+          <img src="images/joke/ржака3.jpg" alt="Анекдот">
+        </div>
+      </div>
+    </section>
+
+    <section id="film" class="block cinema-block">
+      <h2>Фильмец</h2>
+
+      <div class="cinema">
+        <div class="cinema-text">
+          <p><strong>Название:</strong> Железный человек</p>
+          <p><strong>Отзыв:</strong> Легендарный фильм, один из самых любимых фильмов Marvel. Это не просто супергеройский боевик, а история о гении, который учится ответственности и меняется на глазах зрителя.</p>
+        </div>
+        <div class="cinema-img">
+          <img src="images/cinema/Iron_man_filmposter.jpg" alt="Фильм">
+        </div>
+      </div>
+
+      <!-- ЦИТАТЫ -->
+      <div class="joke">
+        <div class="joke-text">
+          <p>❝ Я не безумец, Пеппер. Я просто наконец понял, что мне надо делать. ❞</p>
+        </div>
+      </div>
+
+      <div class="joke">
+        <div class="joke-text">
+          <p>❝ Тони Старк собрал этот реактор, сидя в яме!... Из металлолома! ❞</p>
+        </div>
+      </div>
+
+      <div class="joke">
+        <div class="joke-text">
+          <p>❝ Нельзя сначала стрелять, а потом целиться! ❞</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="matches" class="block matches-block">
+      <h2>Расписание матчей</h2>
+
+      <div class="match-card">
+        <div class="match-date">
+          <span class="match-day">28</span>
+          <span class="match-month">Февраля</span>
+        </div>
+
+        <div class="match-info">
+          <span>19 тур</span>
+          <span>Суббота</span>
+          <span>17:00</span>
+        </div>
+
+        <div class="match-teams">
+          <div class="team">
+            <img src="images/teams/loco.jpg" alt="Локомотив">
+            <span>Локомотив</span>
+          </div>
+
+          <span class="vs">vs</span>
+
+          <div class="team">
+            <img src="images/teams/pari.png" alt="Пари НН">
+            <span>Пари НН</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>
