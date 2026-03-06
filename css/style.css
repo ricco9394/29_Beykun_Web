@@ -1,0 +1,300 @@
+body {
+    font-family: "Comic Sans MS", sans-serif;
+    background-color: yellow;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(red, blue); 
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border: 5px solid black;
+}
+
+.header-box {
+    background: red;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 5px dashed yellow;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 3px 3px black;
+}
+
+.marquee {
+    background: black;
+    color: lime;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+.sidebar-left, .sidebar-right {
+    background: cyan;
+    border: 3px dotted magenta;
+    padding: 5px;
+}
+
+.ad-block {
+    background: white;
+    border: 2px solid red;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-block img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.ad-text {
+    font-weight: bold;
+    color: blue;
+    font-size: 14px;
+}
+
+.content-area {
+    background: #ffffcc;
+    padding: 15px;
+    border: 1px solid gray;
+}
+
+.reasons-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+    border: 3px ridge green;
+    background: lime;
+    padding: 10px;
+}
+
+.reason-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: white;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.number-circle {
+    width: 40px;
+    height: 40px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.slogans-container {
+    text-align: center;
+    background: purple;
+    color: yellow;
+    padding: 20px;
+    margin: 20px 0;
+    border: 5px outset white;
+}
+
+.slogan-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    border: 2px dashed white;
+    display: inline-block;
+    padding: 5px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.review-card {
+    background: white;
+    border: 3px double blue;
+    padding: 10px;
+}
+
+.stars {
+    color: orange;
+    font-size: 20px;
+}
+
+.buy-btn {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    background: red;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    border: 5px outset yellow;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar-right {
+        display: none; 
+    }
+    
+    .sidebar-left {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .ad-block {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+    
+    .header-box {
+        padding: 10px;
+    }
+    
+    .reason-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .number-circle {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .buy-btn {
+        font-size: 20px;
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .slogan-text {
+        font-size: 18px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .sidebar-left {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 22px;
+    }
+    
+    .marquee {
+        font-size: 14px;
+    }
+    
+    .reasons-box {
+        padding: 5px;
+    }
+    
+    .reason-item {
+        padding: 5px;
+        font-size: 14px;
+    }
+    
+    .number-circle {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+    }
+    
+    .slogans-container {
+        padding: 10px;
+    }
+    
+    .slogan-text {
+        font-size: 14px;
+        padding: 3px;
+    }
+    
+    .buy-btn {
+        font-size: 16px;
+        padding: 10px;
+    }
+    
+    .review-card {
+        padding: 8px;
+    }
+    
+    .stars {
+        font-size: 16px;
+    }
+    
+    .footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+    
+    .ad-block img {
+        max-width: 150px;
+    }
+}
