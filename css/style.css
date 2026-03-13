@@ -1,21 +1,127 @@
+/* Основные переменные для темной темы */
+:root {
+    --bg-body: yellow;
+    --bg-wrapper: white;
+    --text-color: black;
+    --border-color: black;
+    --header-bg: red;
+    --header-text: white;
+    --marquee-bg: black;
+    --marquee-text: lime;
+    --sidebar-bg: cyan;
+    --sidebar-border: magenta;
+    --ad-bg: white;
+    --ad-border: red;
+    --content-bg: #ffffcc;
+    --reasons-bg: lime;
+    --reasons-border: green;
+    --reason-bg: white;
+    --slogans-bg: purple;
+    --slogans-text: yellow;
+    --review-bg: white;
+    --review-border: blue;
+    --footer-bg: black;
+    --footer-text: white;
+    --btn-bg: red;
+    --btn-text: white;
+    --btn-border: yellow;
+    --input-bg: white;
+    --input-border: gray;
+    --shadow-color: rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] {
+    --bg-body: #1a1a1a;
+    --bg-wrapper: #2d2d2d;
+    --text-color: #f0f0f0;
+    --border-color: #666;
+    --header-bg: #8b0000;
+    --header-text: #ffd700;
+    --marquee-bg: #00ff00;
+    --marquee-text: #000000;
+    --sidebar-bg: #0066cc;
+    --sidebar-border: #ff69b4;
+    --ad-bg: #404040;
+    --ad-border: #ff4444;
+    --content-bg: #333333;
+    --reasons-bg: #006400;
+    --reasons-border: #32cd32;
+    --reason-bg: #404040;
+    --slogans-bg: #4b0082;
+    --slogans-text: #ffff00;
+    --review-bg: #404040;
+    --review-border: #4169e1;
+    --footer-bg: #000080;
+    --footer-text: #ffffff;
+    --btn-bg: #8b0000;
+    --btn-text: #ffff00;
+    --btn-border: #ffd700;
+    --input-bg: #555;
+    --input-border: #888;
+    --shadow-color: rgba(255,255,255,0.2);
+}
+
 body {
     font-family: "Comic Sans MS", sans-serif;
-    background-color: yellow;
+    background-color: var(--bg-body);
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(red, blue); 
+    background-image: linear-gradient(red, blue);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Скрытые заголовки для семантики */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* Кнопка переключения темы */
+.theme-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle-btn {
+    padding: 10px 20px;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: 3px solid var(--btn-border);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.05);
 }
 
 .wrapper {
     width: 1000px;
     margin: 0 auto;
-    background: white;
-    border: 5px solid black;
+    background: var(--bg-wrapper);
+    border: 5px solid var(--border-color);
 }
 
 .header-box {
-    background: red;
-    color: white;
+    background: var(--header-bg);
+    color: var(--header-text);
     text-align: center;
     padding: 20px;
     border-bottom: 5px dashed yellow;
@@ -24,12 +130,12 @@ body {
 h1 {
     font-size: 50px;
     margin: 0;
-    text-shadow: 3px 3px black;
+    text-shadow: 3px 3px var(--border-color);
 }
 
 .marquee {
-    background: black;
-    color: lime;
+    background: var(--marquee-bg);
+    color: var(--marquee-text);
     font-size: 20px;
     font-weight: bold;
 }
@@ -43,14 +149,14 @@ h1 {
 }
 
 .sidebar-left, .sidebar-right {
-    background: cyan;
-    border: 3px dotted magenta;
+    background: var(--sidebar-bg);
+    border: 3px dotted var(--sidebar-border);
     padding: 5px;
 }
 
 .ad-block {
-    background: white;
-    border: 2px solid red;
+    background: var(--ad-bg);
+    border: 2px solid var(--ad-border);
     margin-bottom: 15px;
     text-align: center;
     padding: 5px;
@@ -74,8 +180,49 @@ h1 {
     font-size: 14px;
 }
 
+[data-theme="dark"] .ad-text {
+    color: #87cefa;
+}
+
+.buy-small-btn {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: 2px solid var(--btn-border);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.earnings-block {
+    background: black;
+    color: lime;
+    padding: 10px;
+    font-family: monospace;
+}
+
+[data-theme="dark"] .earnings-block {
+    background: #333;
+    color: #00ff00;
+}
+
+.gif-container {
+    background: purple;
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gif-container img {
+    max-width: 100%;
+    max-height: 100px;
+}
+
 .content-area {
-    background: #ffffcc;
+    background: var(--content-bg);
     padding: 15px;
     border: 1px solid gray;
 }
@@ -85,8 +232,8 @@ h1 {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 30px;
-    border: 3px ridge green;
-    background: lime;
+    border: 3px ridge var(--reasons-border);
+    background: var(--reasons-bg);
     padding: 10px;
 }
 
@@ -94,9 +241,10 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: white;
+    background: var(--reason-bg);
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
 }
 
 .number-circle {
@@ -113,10 +261,14 @@ h1 {
     flex-shrink: 0;
 }
 
+[data-theme="dark"] .number-circle {
+    background: #8b0000;
+}
+
 .slogans-container {
     text-align: center;
-    background: purple;
-    color: yellow;
+    background: var(--slogans-bg);
+    color: var(--slogans-text);
     padding: 20px;
     margin: 20px 0;
     border: 5px outset white;
@@ -131,6 +283,11 @@ h1 {
     padding: 5px;
 }
 
+/* Отзывы */
+.reviews-section {
+    margin: 30px 0;
+}
+
 .reviews-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -138,27 +295,144 @@ h1 {
 }
 
 .review-card {
-    background: white;
-    border: 3px double blue;
+    background: var(--review-bg);
+    border: 3px double var(--review-border);
     padding: 10px;
+    color: var(--text-color);
 }
 
-.stars {
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid red;
+}
+
+.review-author {
+    font-weight: bold;
+    color: red;
+}
+
+[data-theme="dark"] .review-author {
+    color: #ff6b6b;
+}
+
+.review-stars {
     color: orange;
     font-size: 20px;
+    margin: 5px 0;
+}
+
+.review-text {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Форма отзыва */
+.review-form-container {
+    background: var(--review-bg);
+    border: 3px double var(--review-border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: red;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 8px;
+    border: 2px solid var(--input-border);
+    border-radius: 5px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    font-size: 14px;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: red;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-hint {
+    font-size: 12px;
+    color: #666;
+}
+
+.form-error {
+    background: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffcdd2;
+    margin-top: 10px;
+}
+
+.submit-review-btn {
+    background: red;
+    color: white;
+    border: 3px outset yellow;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.submit-review-btn:hover {
+    transform: scale(1.05);
+    background: #8b0000;
+}
+
+.submit-review-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .buy-btn {
     display: block;
     width: 80%;
     margin: 20px auto;
-    background: red;
-    color: white;
+    background: var(--btn-bg);
+    color: var(--btn-text);
     font-size: 30px;
     text-align: center;
     padding: 20px;
     text-decoration: none;
-    border: 5px outset yellow;
+    border: 5px outset var(--btn-border);
     animation: pulse 1s infinite;
 }
 
@@ -169,13 +443,14 @@ h1 {
 }
 
 .footer {
-    background: black;
-    color: white;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     text-align: center;
     padding: 20px;
     margin-top: 20px;
 }
 
+/* Адаптивность */
 @media screen and (max-width: 900px) {
     .wrapper {
         width: 100%;
@@ -239,6 +514,16 @@ h1 {
     
     .sidebar-left {
         display: none;
+    }
+    
+    .theme-toggle-container {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .theme-toggle-btn {
+        padding: 5px 10px;
+        font-size: 12px;
     }
 }
 
