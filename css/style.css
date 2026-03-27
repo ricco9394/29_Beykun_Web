@@ -1,4 +1,3 @@
-/* Основные переменные для темной темы */
 :root {
     --bg-body: yellow;
     --bg-wrapper: white;
@@ -336,7 +335,6 @@ h1 {
     line-height: 1.4;
 }
 
-/* Форма отзыва */
 .review-form-container {
     background: var(--review-bg);
     border: 3px double var(--review-border);
@@ -436,6 +434,158 @@ h1 {
     animation: pulse 1s infinite;
 }
 
+.fun-nav {
+    background: var(--header-bg);
+    border-bottom: 5px dashed var(--btn-border);
+    padding: 5px;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.nav-marquee {
+    background: var(--marquee-bg);
+    color: var(--marquee-text);
+    font-weight: bold;
+    border: 2px solid white;
+    margin-bottom: 5px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: var(--bg-body);
+    color: var(--text-color);
+    border: 3px outset var(--btn-border);
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Comic Sans MS", sans-serif;
+    transition: transform 0.1s;
+    box-shadow: 3px 3px 0px var(--border-color);
+}
+
+.nav-btn:hover {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.nav-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--border-color);
+}
+
+.api-zone {
+    background: var(--reasons-bg);
+    border: 4px ridge var(--reasons-border);
+    padding: 15px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.api-output {
+    background: var(--bg-wrapper);
+    border: 2px dotted var(--border-color);
+    padding: 15px;
+    min-height: 100px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.placeholder-msg {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+[data-theme="dark"] .placeholder-msg {
+    color: #aaa;
+}
+
+.api-card {
+    background: var(--ad-bg);
+    border: 2px solid var(--ad-border);
+    padding: 10px;
+    margin-bottom: 10px;
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.api-card h4 {
+    margin: 0 0 5px 0;
+    color: var(--header-bg);
+    text-transform: uppercase;
+}
+
+[data-theme="dark"] .api-card h4 {
+    color: var(--btn-border);
+}
+
+.api-status {
+    font-weight: bold;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.status-get { background: #e3f2fd; color: #0d47a1; border: 1px solid #90caf9; }
+.status-post { background: #e8f5e9; color: #1b5e20; border: 1px solid #a5d6a7; }
+.status-put { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
+.status-delete { background: #ffebee; color: #b71c1c; border: 1px solid #ef9a9a; }
+
+[data-theme="dark"] .status-get { background: #0d47a1; color: #fff; }
+[data-theme="dark"] .status-post { background: #1b5e20; color: #fff; }
+[data-theme="dark"] .status-put { background: #e65100; color: #fff; }
+[data-theme="dark"] .status-delete { background: #b71c1c; color: #fff; }
+
+.api-data {
+    font-family: monospace;
+    background: var(--input-bg);
+    padding: 5px;
+    border: 1px solid var(--input-border);
+    word-break: break-word;
+}
+
+.loading-spinner {
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+    animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    border: 2px solid red;
+    padding: 10px;
+    background: #ffebee;
+    text-align: center;
+}
+
+[data-theme="dark"] .error-message {
+    background: #333;
+    border-color: #ff5252;
+    color: #ff5252;
+}
+
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -450,7 +600,6 @@ h1 {
     margin-top: 20px;
 }
 
-/* Адаптивность */
 @media screen and (max-width: 900px) {
     .wrapper {
         width: 100%;
