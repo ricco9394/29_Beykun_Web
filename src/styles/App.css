@@ -1,4 +1,4 @@
-:root {
+.app-root {
     --bg-body: yellow;
     --bg-wrapper: white;
     --text-color: black;
@@ -29,7 +29,7 @@
     --shadow-color: rgba(0,0,0,0.5);
 }
 
-[data-theme="dark"] {
+.app-root[data-theme="dark"] {
     --bg-body: #1a1a1a;
     --bg-wrapper: #2d2d2d;
     --text-color: #f0f0f0;
@@ -60,7 +60,7 @@
     --shadow-color: rgba(255,255,255,0.2);
 }
 
-body {
+.app-root {
     font-family: "Comic Sans MS", sans-serif;
     background-color: var(--bg-body);
     margin: 0;
@@ -179,7 +179,7 @@ h1 {
     font-size: 14px;
 }
 
-[data-theme="dark"] .ad-text {
+.app-root[data-theme="dark"] .ad-text {
     color: #87cefa;
 }
 
@@ -201,7 +201,7 @@ h1 {
     font-family: monospace;
 }
 
-[data-theme="dark"] .earnings-block {
+.app-root[data-theme="dark"] .earnings-block {
     background: #333;
     color: #00ff00;
 }
@@ -260,7 +260,7 @@ h1 {
     flex-shrink: 0;
 }
 
-[data-theme="dark"] .number-circle {
+.app-root[data-theme="dark"] .number-circle {
     background: #8b0000;
 }
 
@@ -320,7 +320,7 @@ h1 {
     color: red;
 }
 
-[data-theme="dark"] .review-author {
+.app-root[data-theme="dark"] .review-author {
     color: #ff6b6b;
 }
 
@@ -506,7 +506,7 @@ h1 {
     font-style: italic;
 }
 
-[data-theme="dark"] .placeholder-msg {
+.app-root[data-theme="dark"] .placeholder-msg {
     color: #aaa;
 }
 
@@ -529,7 +529,7 @@ h1 {
     text-transform: uppercase;
 }
 
-[data-theme="dark"] .api-card h4 {
+.app-root[data-theme="dark"] .api-card h4 {
     color: var(--btn-border);
 }
 
@@ -547,10 +547,10 @@ h1 {
 .status-put { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
 .status-delete { background: #ffebee; color: #b71c1c; border: 1px solid #ef9a9a; }
 
-[data-theme="dark"] .status-get { background: #0d47a1; color: #fff; }
-[data-theme="dark"] .status-post { background: #1b5e20; color: #fff; }
-[data-theme="dark"] .status-put { background: #e65100; color: #fff; }
-[data-theme="dark"] .status-delete { background: #b71c1c; color: #fff; }
+.app-root[data-theme="dark"] .status-get { background: #0d47a1; color: #fff; }
+.app-root[data-theme="dark"] .status-post { background: #1b5e20; color: #fff; }
+.app-root[data-theme="dark"] .status-put { background: #e65100; color: #fff; }
+.app-root[data-theme="dark"] .status-delete { background: #b71c1c; color: #fff; }
 
 .api-data {
     font-family: monospace;
@@ -580,7 +580,7 @@ h1 {
     text-align: center;
 }
 
-[data-theme="dark"] .error-message {
+.app-root[data-theme="dark"] .error-message {
     background: #333;
     border-color: #ff5252;
     color: #ff5252;
@@ -731,4 +731,74 @@ h1 {
     .ad-block img {
         max-width: 150px;
     }
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.api-paragraph--strike {
+    text-decoration: line-through;
+}
+
+.api-paragraph--large {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.api-paragraph--red {
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+}
+
+.api-paragraph--small {
+    font-size: 12px;
+    color: gray;
+}
+
+.api-paragraph--italic {
+    text-align: right;
+    font-style: italic;
+}
+
+.api-blockquote {
+    border-left: 4px solid red;
+    padding-left: 10px;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.api-block-list {
+    text-align: left;
+}
+
+.api-hint {
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px dashed blue;
+    background: #e3f2fd;
+    color: #0d47a1;
+    border-radius: 5px;
+}
+
+.app-root[data-theme="dark"] .api-hint {
+    background: #1a237e;
+    color: #e8eaf6;
+    border-color: #5c6bc0;
+}
+
+.api-divider {
+    margin: 10px 0;
+}
+
+.nav-btn.nav-link-active {
+    outline: 3px solid yellow;
+    outline-offset: 2px;
+}
+
+.nav-router {
+    text-decoration: none;
+    color: inherit;
 }
